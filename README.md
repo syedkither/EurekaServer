@@ -1,5 +1,5 @@
 # EurekaServer
-EurekaServer
+EurekaServer @ http://localhost:8761/
 
 Ribbon-based load balancing is sufficient for most of the microservices requirements. However, this approach falls short in a couple of scenarios:
 
@@ -19,3 +19,11 @@ There are a number of options available for dynamic service registration and dis
 Eureka is primarily used for self-registration, dynamic discovery, and load balancing. Eureka uses Ribbon for load balancing internally.
 
 As shown in the preceding diagram, Eureka consists of a server component and a client-side component. The server component is the registry in which all microservices register their availability. The registration typically includes service identity and its URLs. The microservices use the Eureka client for registering their availability. The consuming components will also use the Eureka client for discovering the service 
+
+
+Conclusion
+-----------
+1) My experience with self-preservation is that it’s a false-positive most of the time where it incorrectly assumes a few down microservice instances to be a poor network partition.
+2) Self-preservation never expires, until and unless the down microservices are brought back (or the network glitch is resolved).
+3) If self-preservation is enabled, we cannot fine-tune the instance heartbeat interval, since self-preservation assumes heartbeats are received at intervals of 30 seconds.
+4) Unless these kinds of network glitches are common in your environment, I would suggest to turn it off (even though most people recommend to keep it on).
