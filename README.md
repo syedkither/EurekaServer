@@ -32,9 +32,9 @@ On the  Windows, open the file:
 
 C:\Windows\System32\drivers\etc\hosts
 
-127.0.0.1       my-eureka-server-us.com
-127.0.0.1       my-eureka-server-fr.com
-127.0.0.1       my-eureka-server-vn.com
+    * 127.0.0.1       my-eureka-server-us.com
+    * 127.0.0.1       my-eureka-server-fr.com
+    * 127.0.0.1       my-eureka-server-vn.com
 
 It is noted that this domain name works only on your computer.
 
@@ -44,17 +44,17 @@ After running "Maven Install" successfully, you get a jar file located in the ta
 
 Create 3  CMD files as follow:
 
-eureka-server-us.bat
-eureka-server-fr.bat
-eureka-server-vn.bat
+    * eureka-server-us.bat
+    * eureka-server-fr.bat
+    * eureka-server-vn.bat
 
 We are simulating the creation of three replicas and deployment of them on three different servers, with three different domain names.
 
 OK, now, you can access the following links and view the results:
 
-http://my-eureka-server-us.com:8761
-http://my-eureka-server-fr.com:8762
-http://my-eureka-server-vn.com:8763
+    http://my-eureka-server-us.com:8761
+    http://my-eureka-server-fr.com:8762
+    http://my-eureka-server-vn.com:8763
 
 
 Conclusion
